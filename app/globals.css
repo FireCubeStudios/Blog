@@ -2,21 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff; /* fcn #2A2E38 */
+/*:root {
+  --background: #ffffff; 
   --foreground: #171717;
   --accent: #3CC3FF;
-  --accent-light: color-mix(in hsl, var(--accent), white 30%); /* Calculate light accent from --accent variable */
-}
+  --accent-light: color-mix(in hsl, var(--accent), white 30%);
+}*/
 
-@media (prefers-color-scheme: dark) { /* Dark-mode */
+/* @media (prefers-color-scheme: dark) {*/ /* Dark-mode */
   :root {
-    --background: #1F1F1F;/* #0a0a0a; */
+    --background: #1F1F1F;/* #0a0a0a; */ /* fcn #2A2E38 */
     --foreground: #ededed;
     --accent: #32A4D6;
     --accent-light: color-mix(in hsl, var(--accent), white 30%); /* Calculate light accent from --accent variable */
   }
-}
+/*}*/
 
 body {
   color: var(--foreground);
