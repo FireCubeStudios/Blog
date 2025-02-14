@@ -73,5 +73,5 @@ aside {
   grid-area: sidebar;
   background: #141414;
   animation: SidebarEntrance 200ms ease-out;
-  animation-fill-mode: backwards; /* Important to set sidebar to initial SidebarEntrance property */
+  animation-fill-mode: backwards; /* Important so we can set sidebar to initial SidebarEntrance property */
 }

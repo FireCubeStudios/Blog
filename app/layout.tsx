@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FireCubeStudios blog site",
+  title: "FireCube blog",
   description: "Personal blog site by FireCube with articles on coding",
 };
 

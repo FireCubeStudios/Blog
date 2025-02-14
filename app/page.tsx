@@ -11,9 +11,9 @@ export default function Home() {
           <p className="text">My blog about idk</p>
         </header>
         <section id="Articles">
-        {articles.map((_, index) => (
-          <ArticleCard key={index} />
-        ))}
+          {articles.map((_, index) => (
+            <ArticleCard key={index} />
+          ))}
         </section>
         <aside id="Sidebar">
           <SearchBox/>
