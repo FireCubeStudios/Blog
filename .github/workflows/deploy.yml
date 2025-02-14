@@ -2,9 +2,6 @@ name: Deploy website to Raspberry Pi 5 with Docker
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - master
 
 jobs:
   deploy:
@@ -22,7 +19,7 @@ jobs:
           docker stop blog-react || true
           docker rm blog-react || true
           
-      # Use the Raspberry Pi port 16002 to listen from the container port 8080
+      # Use the Raspberry Pi port 16002 to listen from the container port 3000
       # The port 16002 is used by cloudflare tunnel to display the blog website
       - name: Run new Docker container
         run: |
