@@ -1,0 +1,58 @@
+/* Styles for search button */
+.searchbutton {
+    position: relative; /* Needed for glowbar to be at the bottom */
+    border-radius: 3px;
+    height: 24px;
+    width: 32px;
+    margin: 4px;
+
+    /* Align search icon to center */
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+
+    transition: background-color 200ms ease-out;
+}
+
+.searchbutton:hover {
+    background-color: #bdbdbd3e;
+}
+
+.searchbutton:active {
+    background-color: transparent;
+}
+
+/* Styles for glowbar */
+.glowbar {
+    position: absolute; /* Position glowbar at the bottom of parent button which has position: relative */
+    bottom: 0;
+
+    border-radius: 2px;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(to right, var(--accent-light), var(--accent));
+    box-shadow: 0 0 4px var(--accent-light); /* Glow shadow */
+    transition: width 200ms ease-out, border-radius 200ms ease-out; /* Properties for animating glowbar */
+}
+
+.searchbutton:hover .glowbar {
+    width: 40%;
+}
+
+.searchbutton:active .glowbar {
+    width: 0%;
+}
+
+/* Styles for search icon */
+.searchbutton svg {
+    transform: scale(1);
+    transition: transform 0.2s ease;
+}
+
+.searchbutton:hover svg {
+    transform: scale(1.2);
+}
+
+.searchbutton:active svg {
+    transform: scale(0.8);
+}

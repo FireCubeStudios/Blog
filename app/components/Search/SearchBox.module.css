@@ -4,13 +4,13 @@
 
     border-radius: 4px;
     margin: 12px;
-    background: black;
+    background: #242424;
     box-shadow: 2px 2px 8px rgba(0,0,0,0.64);
     transition: box-shadow 200ms ease-out;
 }
 
 .container:hover {
-    box-shadow: 2px 2px 12px rgba(0,0,0,0.84);
+    box-shadow: 2px 2px 12px rgba(0,0,0,1);
 }
 
 
@@ -46,12 +46,13 @@
     border-radius: 0 2px 2px 2px;
 }
 
-
 /* Flexbox that stores <input/> and other elements horizontally */
 .searchflexbox {
     display: flex;
     flex-direction: row;
+    background-position: center;
 }
+
 
 /* 
     Remove default input styles including the border when it is focused
@@ -60,7 +61,7 @@
 .input {
     border: none;
     background: none;
-    flex-grow: 2; /* Stretch item to cover available space */
+    flex-grow: 1; /* Stretch item to cover available space */
     padding: 4px;
     padding-left: 12px;
     font-size: 14;

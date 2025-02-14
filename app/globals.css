@@ -71,7 +71,7 @@ aside {
   display: flex;
   flex-direction: column;
   grid-area: sidebar;
-  background: #2A2E38;
+  background: #141414;
   animation: SidebarEntrance 200ms ease-out;
   animation-fill-mode: backwards; /* Important to set sidebar to initial SidebarEntrance property */
 }
