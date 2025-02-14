@@ -1,4 +1,4 @@
-import Image from "next/image";
+//import Image from "next/image";
 import SearchBox from "./components/Search/SearchBox";
 import ArticleCard from "./components/ArticleCard/ArticleCard";
 

@@ -1,6 +1,5 @@
 "use client" // Needed for next.js when using useState
 
-import { useState } from "react";
 import styles from "./SearchButton.module.css";
 import { SearchIcon } from "./SearchIcon.js"
 
