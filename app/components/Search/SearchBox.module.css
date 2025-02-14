@@ -14,15 +14,13 @@
 }
 
 
-/* Animation for glowbar */
+/* Animation for glowbar from left to right */
 @keyframes SearchboxFocused { 
-    from {
-        width: 0%;
-        border-radius: 0 0 2px 0px;
+    from { 
+        background-position: 100% 0%;
     }
-    to {
-        width: 100%;
-        border-radius: 0 0 2px 2px;
+    to { 
+        background-position: -100% 0%;
     }
 }
 
@@ -30,15 +28,23 @@
     border-radius: 0 2px 2px 2px;
     height: 2px;
     width: 0%;
-    background: linear-gradient(to right, var(--accent-light), var(--accent));
+
+    /* Linear gradient which animates when focused with a shimmer from left to right */
+    background: linear-gradient(to right, var(--accent) 30%, var(--accent-light) 50%, var(--accent) 80%);
+    background-size: 200% 100%; /* Allows space for the gradient to move with 2x x-axis */
+    background-position: -100% 0%; /* Start default gradient in left side*/
+
     box-shadow: 0 2px 8px var(--accent-light); /* Glow shadow */
-    transition: width 200ms ease-out, border-radius 200ms ease-out; /* Properties for animating glowbar */
+    transition: width 200ms ease-out, border-radius 200ms ease-out; /* Properties for animating glowbar entrance/exit */
 }
 
-/* When searchbox is focused/unfocused animate the glowbar */
+/* When searchbox is focused animate the glowbar */
 .container:focus-within .glowbar {
     width: 100%;
     border-radius: 0 0 2px 2px;
+
+    animation: SearchboxFocused 1200ms linear infinite ;
+    animation-delay: 200ms; /* Start animation after glowbar is shown */
 }
 
 .container:not(:focus-within) .glowbar {
@@ -73,6 +79,7 @@
 
 .input::-webkit-search-cancel-button{
     -webkit-appearance: none;
+    opacity: 0;
     border-radius: 2px;
     height: 14px;
     width: 14px;
@@ -82,10 +89,17 @@
     background-position: center;
 
     -webkit-filter: drop-shadow( 0px 0px 4px #e96e60);
-    transition: background-color 200ms ease-out;
+    transition: background-color 200ms ease-out, opacity 200ms ease;
 }
 
 .input::-webkit-search-cancel-button:hover {
     background-color: #bdbdbd3e;
     -webkit-filter: drop-shadow( 0px 0px 2px #e96e60);
+}
+
+.input:placeholder-shown::-webkit-search-cancel-button {
+    opacity: 0;
+}
+.input:not(:placeholder-shown)::-webkit-search-cancel-button {
+    opacity: 1;
 }
