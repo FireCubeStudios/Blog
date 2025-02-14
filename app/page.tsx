@@ -1,7 +1,26 @@
 import Image from "next/image";
+import SearchBox from "./components/Search/SearchBox";
+import ArticleCard from "./components/ArticleCard/ArticleCard";
 
 export default function Home() {
+  const articles = new Array(10).fill(null); 
   return (
+    <main>
+        <header>
+          <p className="text-2xl">All Articles</p>
+          <p className="text">My blog about idk</p>
+        </header>
+        <section id="Articles">
+        {articles.map((_, index) => (
+          <ArticleCard key={index} />
+        ))}
+        </section>
+        <aside id="Sidebar">
+          <SearchBox/>
+        </aside>
+    </main>
+  );
+  /*return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Image
@@ -97,5 +116,5 @@ export default function Home() {
         </a>
       </footer>
     </div>
-  );
+  );*/
 }

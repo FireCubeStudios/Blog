@@ -3,19 +3,75 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #ffffff; /* fcn #2A2E38 */
   --foreground: #171717;
+  --accent: #3CC3FF;
+  --accent-light: color-mix(in hsl, var(--accent), white 30%); /* Calculate light accent from --accent variable */
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) { /* Dark-mode */
   :root {
-    --background: #0a0a0a;
+    --background: #1F1F1F;/* #0a0a0a; */
     --foreground: #ededed;
+    --accent: #32A4D6;
+    --accent-light: color-mix(in hsl, var(--accent), white 30%); /* Calculate light accent from --accent variable */
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/*  font-family: Arial, Helvetica, sans-serif; */
+
+  font-family: 'Segoe UI Variable Text';
+  font-family: 'Segoe UI Variable Small';
+  font-family: 'Segoe UI Variable Display';
+}
+
+main {
+    background: #1F1F1F;
+    display: grid;
+    grid-template-areas: 
+    "header sidebar"
+    "articles sidebar";
+    grid-template-columns: 3fr 1fr; /* Make content 3 times wider than sidebar */
+    grid-template-rows: 84px auto; /* Make header 50px and rest of content stretch */
+    column-gap: 12px;
+    padding-left: 24px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  grid-area: header;
+  padding-top: 12px;
+}
+
+#Articles {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  grid-area: articles;
+  padding-bottom: 24px;
+}
+
+/* Animation for sidebar when page loads by sliding from the right */
+@keyframes SidebarEntrance { 
+  from {
+    opacity: 0;
+    transform: translateX(500);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0)
+  }
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  grid-area: sidebar;
+  background: #2A2E38;
+  animation: SidebarEntrance 200ms ease-out;
+  animation-fill-mode: backwards; /* Important to set sidebar to initial SidebarEntrance property */
 }
