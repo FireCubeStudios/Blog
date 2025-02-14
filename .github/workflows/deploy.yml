@@ -28,5 +28,5 @@ jobs:
         run: |
           docker run -d --name blog-react \
             --restart unless-stopped \
-            -p 16002:8080 \
+            -p 16002:3000 \
             blog-react-image:latest
