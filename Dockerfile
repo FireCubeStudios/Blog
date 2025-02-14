@@ -2,7 +2,7 @@
 FROM node:20
 
 # Expose the port the website runs on
-EXPOSE 80
+EXPOSE 3000
 
 # Set the working directory in the container to /app
 WORKDIR /app
