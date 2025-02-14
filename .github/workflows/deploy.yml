@@ -1,0 +1,32 @@
+name: Deploy website to Raspberry Pi 5 with Docker
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: |
+          docker build -t blog-react-image:latest .
+
+      - name: Stop old Docker container
+        run: |
+          docker stop blog-react || true
+          docker rm blog-react || true
+          
+      # Use the Raspberry Pi port 16002 to listen from the container port 8080
+      # The port 16002 is used by cloudflare tunnel to display the blog website
+      - name: Run new Docker container
+        run: |
+          docker run -d --name blog-react \
+            --restart unless-stopped \
+            -p 16002:8080 \
+            blog-react-image:latest
