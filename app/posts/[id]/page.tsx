@@ -3,15 +3,17 @@
 
     We pass in the url a parameter of "id" which corresponds to the name of the post markdown file in the
     public/Posts/Markdown folder. The markdown file will be [id].md
+
+    In typescript to parse the id param from url refer to https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes
  */
 import Head from "next/head"
 import { notFound } from 'next/navigation'
 
-export default async function Post({ params }) {
-    const { id } = params; /* Important to get id correctly */
+export default async function Post({ params }: { params: Promise<{ id: string }> }) {
     const req = await fetch(`http://localhost:3000/Posts/Posts.json`);
     const json = await req.json();
     
+    const id = (await params).id // Get the id, see the url in comment above for docs
     const post: Post = json.posts.find((Post: Post) => Post.id === parseInt(id));
     if(!post) // Redirect to 404 if post is not found
         return notFound();
