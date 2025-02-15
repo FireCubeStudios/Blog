@@ -20,7 +20,7 @@ export default async function Home() {
         </section>
         <aside id="Sidebar">
           <SearchBox/>
-          <p className="text-sm">This blog is still in it's early stages with many more features to come. The current version is v1</p>
+          <p className="text-sm">This blog is still in it&apos;s early stages with many more features to come. The current version is v1</p>
           <a href="https://github.com/FireCubeStudios/Blog" className="center" target="_blank">Source code</a>
           <a href="https://discord.gg/3WYcKat" className="center" target="_blank">Discord server</a>
           <a href="https://github.com/FireCubeStudios" className="center" target="_blank">GitHub</a>

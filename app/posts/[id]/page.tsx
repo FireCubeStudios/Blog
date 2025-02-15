@@ -5,7 +5,7 @@
     public/Posts/Markdown folder. The markdown file will be [id].md
  */
 import Head from "next/head"
-import { notFound, redirect } from 'next/navigation'
+import { notFound } from 'next/navigation'
 
 export default async function Post({ params }) {
     const { id } = params; /* Important to get id correctly */

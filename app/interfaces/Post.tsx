@@ -1,6 +1,6 @@
 // Typescript interface for a Post class
 
-interface Post {
+interface Post { // eslint-disable-next-line @typescript-eslint/no-unused-vars
     id: number,
     title: string,
     description: string,
