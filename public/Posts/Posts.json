@@ -1,0 +1,12 @@
+{
+    "posts":[
+        {
+            "id": 1,
+            "title": "Windows App Developer tries web development",
+            "description": "Making a web-based blogging site with very little experience. I wonder how it will go lmao lmao",
+            "tags": ["react", "tag 2"],
+            "createdAt": "2025-02-14T00:00:00Z",
+            "file": "First.md"
+        }
+    ]
+}

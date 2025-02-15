@@ -35,9 +35,11 @@ main {
     "header sidebar"
     "articles sidebar";
     grid-template-columns: 3fr 1fr; /* Make content 3 times wider than sidebar */
-    grid-template-rows: 84px auto; /* Make header 50px and rest of content stretch */
+    grid-template-rows: auto 1fr;
     column-gap: 12px;
+    row-gap: 12px;
     padding-left: 24px;
+    height: 100vh;
 }
 
 header {
@@ -72,6 +74,9 @@ aside {
   flex-direction: column;
   grid-area: sidebar;
   background: #141414;
+  padding: 12px;
+  row-gap: 8px;
+
   animation: SidebarEntrance 200ms ease-out;
   animation-fill-mode: backwards; /* Important so we can set sidebar to initial SidebarEntrance property */
 }

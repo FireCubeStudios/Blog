@@ -1,18 +1,16 @@
 "use client" // Needed for next.js when using useState
 
 import styles from "./ArticleCard.module.css";
+import { redirect } from 'next/navigation'
 
-export default function ArticleCard() {
-    return(
-        <div className={styles.container}>
-            <div>
-                
-            </div>
+export default function ArticleCard({ post }: { post: Post }) {
+
+    return (
+        <div className={styles.container} onClick={() => redirect(`/posts/${post.id}`)}>
             <div className={styles.articlePreview}>
-                <h1 className="text-xl">Article header</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                </p>
+                <h1 className="text-xl">{post.title}</h1>
+                <p className="text-sm opacity-70 italic">{post.createdAt.toString()}</p>
+                <p>{post.description}</p>
             </div>
         </div>
     );
