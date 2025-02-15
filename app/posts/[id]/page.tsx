@@ -7,7 +7,7 @@
 import Head from "next/head"
 import { notFound } from 'next/navigation'
 
-export default async function Post({ params }: { params: { id: string } }) {
+export default async function Post({ params }) {
     const { id } = params; /* Important to get id correctly */
     const req = await fetch(`http://localhost:3000/Posts/Posts.json`);
     const json = await req.json();
