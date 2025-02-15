@@ -14,6 +14,7 @@
     --background: #1F1F1F;/* #0a0a0a; */ /* fcn #2A2E38 */
     --foreground: #ededed;
     --accent: #32A4D6;
+    color-scheme: dark; /* force dark mode */
     --accent-light: color-mix(in hsl, var(--accent), white 30%); /* Calculate light accent from --accent variable */
   }
 /*}*/
@@ -36,7 +37,7 @@ main {
     "articles sidebar";
     grid-template-columns: 3fr 1fr; /* Make content 3 times wider than sidebar */
     grid-template-rows: auto 1fr;
-    column-gap: 12px;
+    column-gap: 4px;
     row-gap: 12px;
     padding-left: 24px;
     height: 100vh;
@@ -55,6 +56,8 @@ header {
   row-gap: 24px;
   grid-area: articles;
   padding-bottom: 24px;
+  padding-right: 4px;
+  overflow-y: auto;
 }
 
 /* Animation for sidebar when page loads by sliding from the right */
@@ -79,4 +82,25 @@ aside {
 
   animation: SidebarEntrance 200ms ease-out;
   animation-fill-mode: backwards; /* Important so we can set sidebar to initial SidebarEntrance property */
+}
+
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 4px; /* Important to show scrollbar */
+  height: 4px; /* Important for horizontal scrollbar */
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--accent-light), var(--accent)); 
+  box-shadow: 0 0 2px var(--accent-light); 
+  border-radius: 4px;
+  width: 4px;
+  height: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, var(--accent), var(--accent-light)); 
 }
