@@ -1,6 +1,6 @@
 import SearchBox from "./components/Search/SearchBox";
 import ArticleCard from "./components/ArticleCard/ArticleCard";
-export const dynamic = 'force-dynamic'
+export const dynamic = 'force-dynamic' /* force dynamic rendering for now */
 export default async function Home() {
   const req = await fetch(`http://localhost:3000/Posts/Posts.json`);
   const data = await req.json(); // Get posts from JSON file
