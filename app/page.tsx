@@ -2,7 +2,7 @@ import SearchBox from "./components/Search/SearchBox";
 import ArticleCard from "./components/ArticleCard/ArticleCard";
 
 export default async function Home() {
-  const req = await fetch(`/Posts/Posts.json`);
+  const req = await fetch(`http://host.docker.internal:3000/Posts/Posts.json`);
   const data = await req.json(); // Get posts from JSON file
 
   return (
