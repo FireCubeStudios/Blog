@@ -10,7 +10,7 @@ import Head from "next/head"
 import { notFound } from 'next/navigation'
 
 export default async function Post({ params }: { params: Promise<{ id: string }> }) {
-    const req = await fetch(`http://localhost:3000/Posts/Posts.json`);
+    const req = await fetch(`/Posts/Posts.json`);
     const json = await req.json();
     
     const id = (await params).id // Get the id, see the url in comment above for docs
@@ -18,7 +18,7 @@ export default async function Post({ params }: { params: Promise<{ id: string }>
     if(!post) // Redirect to 404 if post is not found
         return notFound();
 
-    //const reqMD = await fetch(`http://localhost:3000/Posts/Markdown/${post.id}.md`);
+    //const reqMD = await fetch(`/Posts/Markdown/${post.id}.md`);
     return(<>
         <Head>
             <title>{post.title}</title>
