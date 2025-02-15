@@ -10,7 +10,7 @@ import Head from "next/head"
 import { notFound } from 'next/navigation'
 
 export default async function Post({ params }: { params: Promise<{ id: string }> }) {
-    const req = await fetch(`http://host.docker.internal:3000/Posts/Posts.json`);
+    const req = await fetch(`http://localhost:3000/Posts/Posts.json`);
     const json = await req.json();
     
     const id = (await params).id // Get the id, see the url in comment above for docs
