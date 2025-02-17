@@ -93,14 +93,8 @@ aside {
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, var(--accent-light), var(--accent)); 
-  box-shadow: 0 0 2px var(--accent-light); 
-  border-radius: 4px;
+  background: #9E9D9D; 
+  border-radius: 2px;
   width: 4px;
   height: 4px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, var(--accent), var(--accent-light)); 
 }

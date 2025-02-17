@@ -30,7 +30,7 @@
     border-radius: 2px;
     height: 2px;
     width: 0%;
-    background: linear-gradient(to right, var(--accent-light), var(--accent));
+    background: linear-gradient(to right, var(--accent-light), var(--accent), var(--accent-light));
     box-shadow: 0 0 4px var(--accent-light); /* Glow shadow */
     transition: width 200ms ease-out, border-radius 200ms ease-out; /* Properties for animating glowbar */
 }
@@ -40,7 +40,7 @@
 }
 
 .searchbutton:active .glowbar {
-    width: 0%;
+    width: 8%;
 }
 
 /* Styles for search icon */

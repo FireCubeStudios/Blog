@@ -1,0 +1,67 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 2px 8px 2px 8px;
+    border-radius: 4px;
+    background: transparent;
+    width: fit-content; /* Container will wrap children rather than stretching to fill it's parent */
+
+    transition: background-color 200ms ease-out;
+}
+
+.container:hover {
+    background-color: #bdbdbd15;
+}
+
+.container:active {
+    background-color: transparent;
+}
+
+/* Styles for link */
+.link {
+    /* Make items in link horizontally stack with 4px spacing */
+    display: flex;
+    flex-direction: row; 
+    column-gap: 4;
+    align-items: center;
+
+    color: var(--accent);
+    transform: scale(1);
+
+    transition: transform 0.2s ease, background-color 0.8s ease, text-shadow 200ms ease-out;
+}
+
+.container:hover .link {
+    /* This block of code adds gradient to text */
+   /* color: transparent;
+    background: linear-gradient(to right, var(--accent-light), var(--accent), var(--accent-light));
+    -webkit-background-clip: text;
+    background-clip: text;*/
+    transform: scale(1.05);
+    text-shadow: 0 0 8px var(--accent-light); /* Glow shadow */
+}
+
+.container:active .link {
+    transform: scale(0.9);
+    text-shadow: 0 0 4px var(--accent-light); /* Glow shadow */
+}
+
+/* Styles for glowbar */
+.glowbar {
+    border-radius: 2px;
+    height: 2px;
+    width: 0%;
+    background-image: linear-gradient(to right, var(--accent-light), var(--accent), var(--accent-light));
+    box-shadow: 0 0 4px var(--accent-light); /* Glow shadow */
+
+    align-self: center;
+    transition: width 200ms ease; /* Properties for animating glowbar */
+}
+
+.container:hover .glowbar {
+    width: 80%;
+}
+
+.container:active .glowbar {
+    width: 20%;
+}
