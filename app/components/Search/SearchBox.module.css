@@ -5,10 +5,18 @@
     border-radius: 4px;
     background: #242424;
     box-shadow: 2px 2px 8px rgba(0,0,0,0.64);
-    transition: box-shadow 200ms ease-out;
+
+    transform: scale(1);
+    transition: transform 0.2s ease, box-shadow 200ms ease-out;
 }
 
 .container:hover {
+    transform: scale(1);
+    box-shadow: 2px 2px 12px rgba(0,0,0,1);
+}
+
+.container:not(:focus-within):hover {
+    transform: scale(1.01); /* Float a bit when hovering when not focused */
     box-shadow: 2px 2px 12px rgba(0,0,0,1);
 }
 
